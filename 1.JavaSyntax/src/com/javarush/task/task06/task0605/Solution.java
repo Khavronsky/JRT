@@ -1,7 +1,9 @@
 package com.javarush.task.task06.task0605;
 
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /* 
 Контролируем массу тела
@@ -20,6 +22,19 @@ public class Solution {
     public static class Body {
         public static void massIndex(double weight, double height) {
             //напишите тут ваш код
+            double idx = weight / (height * height);
+            if (idx < 18.5) {
+                System.out.println("Недовес: меньше чем 18.5\n" + idx);
+            }
+            if (idx >= 18.5 && idx <=24.9) {
+                System.out.println("Нормальный: между 18.5 и 24.9\n" + idx);
+            }
+            if (idx >= 25 && idx <=29.9) {
+                System.out.println("Избыточный вес: между 25 и 29.9\n" + idx);
+            }
+            if (idx >= 30) {
+                System.out.println("Ожирение: 30 или больше\n" + idx);
+            }
         }
     }
 }
